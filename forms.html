@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--  Course: https://www.linkedin.com/learning/learning-javascript-animations-with-greensock/ -->
 <head>
     <meta charset="UTF-8">
     <title>SVG Forms</title>
@@ -9,22 +10,59 @@
     <svg id="star" width="224" viewBox="0 0 224 210" fill="none" >
         <path d="M118 9l32 70h65l-46 53 16 68-67-48-71 48 16-68-53-53h66l42-70z" stroke="#EECE42" stroke-width="8"/>
     </svg>
+    <code>
+        <ul>
+            <li> The "path" element: defines a path to be drawn.</li>
+            <li> The "d" attribute: defines a path to be drawn.</li>
+            <li> The "M" command: moves the pen or current point to a new location or to the X and Y coordinates.</li>
+        </ul>
+    </code>
 <!--    - The "d" Attribute: defines a path to be drawn.
         - The "M" command: moves the pen or current point to a new location or to the X and Y coordinates.
 -->
+
+    <hr>
 
     <!-- A Line in SVG: -->
     <svg>
         <path fill="none" stroke="black" d="M 10,10 L 90,90"/>
     </svg>
-<!--    - The "L" command: draws a straight line from the current point to the new point.
+    <code>
+        <ul>
+            <li> The "M" command: draws a straight line from the current point to the new point. Moves the pen or current point to a new location or to the X and Y coordinates.</li>
+            <li> The "L" command: takes two parameters (the x and y coordinates) of the end point and draws a line from the current position to a new position. Draws a straight line from the current point to the new point.</li>
+        </ul>
+    </code>
+<!--    - The "M" command: draws a straight line from the current point to the new point.
         - "L" takes two parameters: the x and y coordinates of the end point and draws a line from the current position to a new position
  -->
 
+    <hr>
+    <svg>
+        <path fill="none" stroke="black" d="M 10,10 L 90,90 V 50 H 1000"/>
+    </svg>
+    <code>
+        <ul>
+            <li> The "V" command: draws a vertical line from the current point to the new point.</li>
+            <li> The "H" command: draws a horizontal line from the current point to the new point.</li>
+        </ul>
+    </code>
+    <!--    - The "V" command: draws a vertical line from the current point to the new point.
+            - The "H" command: draws a horizontal line from the current point to the new point.
+     -->
+
+    <hr>
     <!-- A Rectangle in SVG: -->
     <svg>
         <rect x="10" y="10" width="100" height="100" fill="none" stroke="black"/>
     </svg>
+    <code>
+        <ul>
+            <li> The "rect" element: defines a rectangle.</li>
+            <li> The "x" and "y" attributes: defines the top-left corner of the rectangle.</li>
+            <li> The "width" and "height" attributes: defines the width and height of the rectangle.</li>
+        </ul>
+    </code>
 <!--    - The "rect" element: defines a rectangle.
         - The "x" and "y" attributes: defines the top-left corner of the rectangle.
         - The "width" and "height" attributes: defines the width and height of the rectangle.
