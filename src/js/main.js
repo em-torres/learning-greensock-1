@@ -59,5 +59,19 @@ window.onload = function () {
         return paraTL
     }
 
-    // Setting up a Main Timeline
+    // Setting up a Main Timeline.
+    let mainTL = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#thoughts",
+            start: "top 50%",
+            end: "100 100%",
+            markers: true,
+            scrub: 1,
+        },
+    })
+
+    mainTL.add(paraAnimation(".thoughts_paragraph-1"))
+        .add(paraAnimation(".thoughts_paragraph-2"))
+        .add(lineAnimation(".line_1"))
+        .add(lineAnimation(".line_2"))
 }
