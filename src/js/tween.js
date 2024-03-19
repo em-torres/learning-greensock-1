@@ -72,8 +72,8 @@ window.onload = function() {
         path3 = "M-82.69499,-40.08529 C-7.94199,18.80104 66.81101,77.68738 141.56401,136.57371 238.08201,95.81004 334.60001,55.04638 431.11801,14.28271 ",
         path4 = "M126.51311,118.06986 C29.76678,41.59186 -66.97956,-34.88614 -163.72589,-111.36414 -250.07922,-59.10714 -336.43256,-6.85014 -422.78589,45.40686 ";
 
-    gsap.set('.snitch',{align: "path"})
-    gsap.set('#harry',{align: "path4"})
+    gsap.set('.snitch', {motionPath: path})
+    gsap.set('#harry', {motionPath: path4})
     gsap.to('.wave', {
         duration:() => {
             return Math.random() * 1;
@@ -104,7 +104,7 @@ window.onload = function() {
 
     const snitch = () => {
         let tl = gsap.timeline({ defaults: {
-                ease: "rough({ template: power0.none, strength: 1, points: 10, taper: 'none', randomize: false, clamp: false}",  type: "cubic",
+                ease: "rough({ template: power0.none, strength: 1, points: 10, taper: 'none', randomize: false, clamp: false}",
             }})
         tl.add('s')
         tl
@@ -161,7 +161,6 @@ window.onload = function() {
         return tl
     }
 
-
     const master = gsap.timeline({repeat:-1})
     master.add('start')
     master.add(snitch(), 'start+=0.1')
@@ -169,6 +168,7 @@ window.onload = function() {
         .add(hover("#harry", path4),'start+=0.1')
         .add(race("#cho", -20),'start+=0.9')
         .add(race("#harry", 20),'start+=1')
+
 
     // -- Class 5 - Defaults
     // By using defaults we remove the need to repeat the same properties over and over again.
@@ -179,21 +179,21 @@ window.onload = function() {
     )
     tl1.timeScale(2) // Speed up the timeline
 
-    tl1.to(".container4 .box1", {
+    tl1.to(".container5 .box1", {
         scale: 0,
         opacity: 0,
     })
-        .to(".container4 .box2", {
+        .to(".container5 .box2", {
             x: "-100%"
         })
-        .to(".container4 .box3", {
+        .to(".container5 .box3", {
             x: "-100%",
             rotate: 360
         })
-        .set(".container4 .box1", {
+        .set(".container5 .box1", {
             x: "225%"
         })
-        .to(".container4 .box1", {
+        .to(".container5 .box1", {
             scale: 1,
             opacity: 1,
         })
