@@ -42,7 +42,7 @@ window.onload = function () {
             stagger: {amount: 0.5},
             ease: "back.out(1.7)",
             scaleX: 0,
-            duration: 1
+            duration: 3
         })
 
         return lineTL
@@ -53,7 +53,7 @@ window.onload = function () {
         paraTL.from(paragraph, {
             scale: 0,
             x: -200,
-            duration: 1
+            duration: 3
         })
 
         return paraTL
@@ -70,8 +70,22 @@ window.onload = function () {
         },
     })
 
-    mainTL.add(paraAnimation(".thoughts_paragraph-1"))
-        .add(paraAnimation(".thoughts_paragraph-2"))
-        .add(lineAnimation(".line_1"))
-        .add(lineAnimation(".line_2"))
+    // mainTL.add(paraAnimation(".thoughts_paragraph-1"))
+    //     .add(paraAnimation(".thoughts_paragraph-2"))
+    //     .add(lineAnimation(".line_1"))
+    //     .add(lineAnimation(".line_2"))
+
+    // --- Positioning Animations in a Timeline.
+    // mainTL.add("start") // Label
+    // mainTL.add(paraAnimation(".thoughts_paragraph-1"))              // First animation starts with the label, no need to declare it.
+    //     .add(paraAnimation(".thoughts_paragraph-2"), "start+=0.2")  // Second animation starts 0.2 seconds after the first one.
+    //     .add(lineAnimation(".line_1"), "start+=0.2")                    // Third animation starts 0.2 seconds after the second one.
+    //     .add(lineAnimation(".line_2"), "start")                         // Fourth animation starts with the label.
+
+    // --- Relative Positioning
+    // Positioning Animations in a Timeline.
+    mainTL.add(paraAnimation(".thoughts_paragraph-1"))          // First animation starts with the label, no need to declare it.
+        .add(lineAnimation(".line_2"), "<")                         // Start 0.2 seconds before the previous animation.
+        .add(paraAnimation(".thoughts_paragraph-2"), "<0.2")    // Start 0.2 seconds after the previous animation.
+        .add(lineAnimation(".line_1"), "<0.2")                      // Start 0.2 seconds after the previous animation.
 }
